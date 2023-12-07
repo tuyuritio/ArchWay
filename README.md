@@ -1,27 +1,25 @@
 # ArchWay
 
-Maybe I use ArchLinux.
+Maybe I use Arch.
 
 > 正直、Windows は基本的に十分だな。
 
-## 目录
+## 软件
 
-- 安装
-- 基础
-- 驱动
-- 美化
+| 名称 | 描述 | 链接 |
+|:-:|-|-|
 
 ## TODO
 
-- Basic
-    - Neovim
-- GTK Theme - Oomox
-- Hyprland
-    - Hyprpaper
-- Neovim
-    - Plugin Manage
-- Firefox
-- Fcitx
-- Btop
-- Git
-- Ly
+- [ ] GTK Theme
+- [ ] Hypr
+    - [ ] Hyprland
+    - [ ] Hyprpaper
+- [ ] Neovim
+    - [ ] Plugin Manage
+- [ ] Firefox
+- [ ] Fcitx
+- [ ] Btop
+- [ ] Git
+- [ ] Ly
+- [ ] Paru
