@@ -1,0 +1,4 @@
+#!/bin/bash
+
+ip link | sed -n 's/.*state \(\w\+\).*/\1/p'
+ip monitor link | sed -n 's/.*state \(\w\+\).*/\1/p'
