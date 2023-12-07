@@ -1,0 +1,31 @@
+(deflisten workspaces
+  :initial "[]"
+  `bash scripts/get-workspaces`
+)
+
+(defwidget workspace []
+  (eventbox
+    :onscroll `echo {} | sed -e "s/up/-/" -e "s/down/+/" | xargs -I _ hyprctl dispatch workspace e_1`
+    
+    (box
+      :space-evenly false
+      :class "box"
+      
+      (for workspace in workspaces
+        (eventbox
+          :onclick `hyprctl dispatch workspace ${workspace.id}`
+          :cursor "pointer"
+          :visible "${workspace.windows>0||workspace.active}"
+          
+          (box
+            :class "box ${workspace.active?'active':''}"
+            
+            (label
+              :text "${workspace.id}"
+            )
+          )
+        )
+      )
+    )
+  )
+)

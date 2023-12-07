@@ -1,0 +1,42 @@
+* {
+    all: unset;
+    color: black;
+    font-family: "monospace";
+}
+
+.bar>* {
+    // CenterBox
+
+    margin: 5px;
+
+    .box {
+        padding: 0px 5px;
+    }
+
+    >* {
+        >* {
+            background: #ffffff;
+            border: 1px solid;
+
+            border-radius: 5px;
+        }
+
+        &.left{
+            .active{
+                font-weight: bolder;
+            }
+        }
+
+        &.right {
+            .battery {
+                &-charging>* {
+                    color: #008800;
+                }
+
+                &-low>* {
+                    color: #dd0000;
+                }
+            }
+        }
+    }
+}

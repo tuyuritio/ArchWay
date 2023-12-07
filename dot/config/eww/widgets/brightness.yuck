@@ -1,0 +1,26 @@
+(defpoll brightness
+  :interval "1s"
+  :initial "0"
+  `brightnessctl -m | cut -d ',' -f 4 | sed 's/%//g'`
+)
+
+(defwidget brightness []
+  (eventbox
+    :cursor "row-resize"
+    :onscroll `echo {} | sed -e "s/up/+1%/" -e "s/down/1%-/" | xargs -I {} brightnessctl set {} -m | cut -d ',' -f 4 | sed 's/%//g' | xargs -I value eww update brightness=value`
+    
+    (box
+      :class "box"
+      :space-evenly false
+      
+      (label
+        :text "${brightness>=80?'󰃠':brightness>=30?'󰃟':'󰃞'}"
+      )
+      (label
+        :width 45
+        :xalign 1
+        :text "${brightness}%"
+      )
+    )
+  )
+)

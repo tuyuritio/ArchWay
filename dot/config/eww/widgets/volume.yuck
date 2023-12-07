@@ -1,0 +1,27 @@
+(defpoll volume
+  :interval "1s"
+  :initial "0"
+  `pamixer --get-volume-human | sed -e 's/%//g'`
+)
+
+(defwidget volume []
+  (eventbox
+    :cursor "row-resize"
+    :onclick `pamixer --toggle-mute --get-volume-human | sed -e 's/%//g'| xargs -I value eww update volume=value`
+    :onscroll `echo {} | sed -e "s/up/in/" -e "s/down/de/" | xargs -I {} pamixer --{}crease 1 --get-volume-human | sed -e 's/%//g'| xargs -I value eww update volume=value`
+    
+    (box
+      :class "box"
+      :space-evenly false
+      
+      (label
+        :text "${volume=='muted'?'󰝟':volume>=60?'󰕾':volume>=30?'󰖀':'󰕿'}"
+      )
+      (label
+        :width 45
+        :xalign 1
+        :text "${volume=='muted'?'----':volume+'%'}"
+      )
+    )
+  )
+)

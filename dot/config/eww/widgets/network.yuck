@@ -1,0 +1,20 @@
+(defwidget network []
+  (box
+    :class "box"
+    :space-evenly false
+    
+    (label
+      :text "󰖩"
+    )
+    (label
+      :width 85
+      :xalign 1
+      :text  "${EWW_NET.wlp9s0.NET_DOWN<1024?EWW_NET.wlp9s0.NET_DOWN:EWW_NET.wlp9s0.NET_DOWN<1024*1024?round(EWW_NET.wlp9s0.NET_DOWN/1024,0)+'K':EWW_NET.wlp9s0.NET_DOWN<1024*1024*1024?round(EWW_NET.wlp9s0.NET_DOWN/1024/1024,0)+'M':round(EWW_NET.wlp9s0.NET_DOWN/1024/1024/1024,0)+'G'}B/s"
+    )
+    (label
+      :width 85
+      :xalign 1
+      :text  "${EWW_NET.wlp9s0.NET_UP<1024?EWW_NET.wlp9s0.NET_UP:EWW_NET.wlp9s0.NET_UP<1024*1024?round(EWW_NET.wlp9s0.NET_UP/1024,0)+'K':EWW_NET.wlp9s0.NET_UP<1024*1024*1024?round(EWW_NET.wlp9s0.NET_UP/1024/1024,0)+'M':round(EWW_NET.wlp9s0.NET_UP/1024/1024/1024,0)+'G'}B/s"
+    )
+  )
+)

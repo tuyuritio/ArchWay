@@ -1,0 +1,17 @@
+; sudo find /sys -name capacity -exec cat {} \;
+
+(defwidget battery []
+  (box
+    :class "box battery-${EWW_BATTERY.BAT0.status=='Charging'||EWW_BATTERY.BAT0.status=='Not charging'?'charging':EWW_BATTERY.BAT0.capacity<=15?'low':'normal'}"
+    :space-evenly false
+    
+    (label
+      :text "${EWW_BATTERY.BAT0.status=='Charging'?'󰂄':EWW_BATTERY.BAT0.status=='Not charging'?'󰂄':EWW_BATTERY.BAT0.status=='Full'?'󰁹':EWW_BATTERY.BAT0.status=='Discharging'?EWW_BATTERY.BAT0.capacity>90?'󰁹':EWW_BATTERY.BAT0.capacity>80?'󰂁':EWW_BATTERY.BAT0.capacity>70?'󰂀':EWW_BATTERY.BAT0.capacity>60?'󰁿':EWW_BATTERY.BAT0.capacity>50?'󰁾':EWW_BATTERY.BAT0.capacity>40?'󰁽':EWW_BATTERY.BAT0.capacity>30?'󰁼':EWW_BATTERY.BAT0.capacity>20?'󰂁':EWW_BATTERY.BAT0.capacity>15?'󰁺':'󰂃':'󱉝'}"
+    )
+    (label
+      :width 45
+      :xalign 1
+      :text "${EWW_BATTERY.BAT0.capacity}%"
+    )
+  )
+)

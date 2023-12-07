@@ -1,0 +1,15 @@
+(defwidget cpu []
+  (box
+    :class "box"
+    :space-evenly false
+    
+    (label
+      :text "󰘚"
+    )
+    (label
+      :width 45
+      :xalign 1
+      :text "${round(EWW_CPU.avg, 0)}%"
+    )
+  )
+)

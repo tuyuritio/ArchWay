@@ -1,0 +1,10 @@
+(defwidget logo []
+  (eventbox
+    :cursor "pointer"
+    
+    (label
+      :width 30
+      :text "󰣇"
+    )
+  )
+)

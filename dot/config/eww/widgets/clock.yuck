@@ -1,0 +1,38 @@
+(defvar show_date
+  false
+)
+(defpoll time
+  :interval "1s"
+  `date +%H:%M:%S`
+)
+(defpoll date
+  :interval "1s"
+  `date +%Y-%m-%d`
+)
+
+(defwidget clock []
+  (eventbox
+    :onhover `eww update show_date=true`
+    :onhoverlost `eww update show_date=false`
+    
+    (box
+      :class "box"
+      :space-evenly false
+      
+      (revealer
+        :transition "slideleft"
+        :reveal show_date
+        :duration "200ms"
+        
+        (label
+          :width 95
+          :text date
+        )
+      )
+      (label
+        :width 75
+        :text time
+      )
+    )
+  )
+)
