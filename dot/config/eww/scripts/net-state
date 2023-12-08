@@ -1,4 +1,6 @@
 #!/bin/bash
 
-ip link | sed -n 's/.*state \(\w\+\).*/\1/p'
-ip monitor link | sed -n 's/.*state \(\w\+\).*/\1/p'
+interface=$1
+
+ip link show $interface | sed -n 's/.*state \(\w\+\).*/\1/p'
+ip monitor link dev $interface | stdbuf -oL sed -n 's/.*state \(\w\+\).*/\1/p'

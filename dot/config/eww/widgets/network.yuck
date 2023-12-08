@@ -4,7 +4,7 @@
 
 (deflisten net_state
   :inital "UNKOWN"
-  `bash scripts/net-state`
+  `bash scripts/net-state wlp9s0`
 )
 
 (defwidget network []
