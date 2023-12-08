@@ -8,7 +8,8 @@ Maybe I use Arch.
 
 | 名称 | 描述 | 链接 |
 |:-:|-|-|
-| Paru | **Arch 用户仓库（AUR）** 助手之一。 | [Note](note/paru.md)
+| Paru | **Arch 用户仓库（AUR）** 助手之一。 | [Note](note/paru.md) |
+| Fcitx5 | 轻量级内核的输入法框架。 | [Note](note/fcitx5.md) |
 
 ## TODO
 
@@ -20,7 +21,7 @@ Maybe I use Arch.
 - [ ] Neovim
     - [ ] Plugin Manage
 - [ ] Firefox
-- [ ] Fcitx
+- [x] Fcitx5
 - [ ] Btop
 - [ ] Git
 - [ ] Ly
