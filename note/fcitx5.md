@@ -8,6 +8,7 @@
     - `fcitx5-qt` - QT 程序兼容模块
 - `fcitx5-chinese-addons` - 中文输入组件
 - `fcitx5-mozc` - 日本語入力パッケージ
+- `fcitx5-skin-fluentdark-git` - FluentDark 皮肤
 
 ## 环境变量
 
