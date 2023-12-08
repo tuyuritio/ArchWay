@@ -1,17 +1,17 @@
-# Lines configured by zsh-newuser-install
+# Basic
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=5000
 setopt extendedglob notify
 unsetopt autocd beep
 bindkey -e
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
+
+# Completion
 zstyle :compinstall filename '/home/tana/.zshrc'
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
-# End of lines added by compinstall
 
 # Plugin
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
