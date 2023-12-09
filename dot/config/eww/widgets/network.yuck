@@ -16,19 +16,17 @@
     (label
       :text "${net_state=='UP'?'󰖩':'󰖪'}"
     )
-    (box
+    (label
       :visible {net_state=='UP'}
-      
-      (label
-        :width 85
-        :xalign 1
-        :text  "${EWW_NET[interface].NET_DOWN<1024?EWW_NET[interface].NET_DOWN:EWW_NET[interface].NET_DOWN<1024*1024?round(EWW_NET[interface].NET_DOWN/1024,0)+'K':EWW_NET[interface].NET_DOWN<1024*1024*1024?round(EWW_NET[interface].NET_DOWN/1024/1024,0)+'M':round(EWW_NET[interface].NET_DOWN/1024/1024/1024,0)+'G'}B/s"
-      )
-      (label
-        :width 85
-        :xalign 1
-        :text  "${EWW_NET[interface].NET_UP<1024?EWW_NET[interface].NET_UP:EWW_NET[interface].NET_UP<1024*1024?round(EWW_NET[interface].NET_UP/1024,0)+'K':EWW_NET[interface].NET_UP<1024*1024*1024?round(EWW_NET[interface].NET_UP/1024/1024,0)+'M':round(EWW_NET[interface].NET_UP/1024/1024/1024,0)+'G'}B/s"
-      )
+      :width 85
+      :xalign 1
+      :text  "${EWW_NET[interface].NET_DOWN<1024?EWW_NET[interface].NET_DOWN:EWW_NET[interface].NET_DOWN<1024*1024?round(EWW_NET[interface].NET_DOWN/1024,0)+'K':EWW_NET[interface].NET_DOWN<1024*1024*1024?round(EWW_NET[interface].NET_DOWN/1024/1024,0)+'M':round(EWW_NET[interface].NET_DOWN/1024/1024/1024,0)+'G'}B/s"
+    )
+    (label
+      :visible {net_state=='UP'}
+      :width 85
+      :xalign 1
+      :text  "${EWW_NET[interface].NET_UP<1024?EWW_NET[interface].NET_UP:EWW_NET[interface].NET_UP<1024*1024?round(EWW_NET[interface].NET_UP/1024,0)+'K':EWW_NET[interface].NET_UP<1024*1024*1024?round(EWW_NET[interface].NET_UP/1024/1024,0)+'M':round(EWW_NET[interface].NET_UP/1024/1024/1024,0)+'G'}B/s"
     )
   )
 )
