@@ -22,9 +22,11 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 alias ls='ls --color'
 alias la='ls -A'
 alias ll='ls -lAh'
+alias nv='nvim'
 alias vi='nvim'
 alias vim='nvim'
 alias jst='joshuto'
+alias activate='activate-linux "激活 ArchLinux" "转到 ArchWiki 以激活 ArchLinux"'
 
 # KeyBinding
 bindkey '^[[1;5C' forward-word
