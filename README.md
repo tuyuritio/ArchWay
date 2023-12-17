@@ -13,6 +13,7 @@ Maybe I use Arch.
 | Git | 版本控制工具。 | [Wiki](https://wiki.archlinux.org/title/Git) |
 | Paru | **Arch 用户仓库（AUR）** 助手之一。 | [Note](note/paru.md) |
 | Foot | 快速轻量的 Wayland 终端模拟器。 | [Wiki](https://wiki.archlinux.org/title/Foot) |
+| Zsh | 专为交互式使用而设计的 Shell。 | [Note](note/zsh.md)
 | Fcitx5 | 轻量级内核的输入法框架。 | [Note](note/fcitx5.md) |
 | Btop | TUI 资源监视器。 | [Source](https://github.com/aristocratos/btop) |
 | GTKLock | 基于 GTK 的 Wayland 锁屏工具。 | [Source](https://github.com/jovanlanik/gtklock) |
@@ -20,7 +21,7 @@ Maybe I use Arch.
 ## TODO
 
 - [ ] GTK Theme
-- [ ] Zsh
+- [x] Zsh
 - [ ] Hypr
     - [ ] Hyprland
     - [ ] Hyprpaper
