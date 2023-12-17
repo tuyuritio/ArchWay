@@ -15,6 +15,7 @@ Maybe I use Arch.
 | Foot | 快速轻量的 Wayland 终端模拟器。 | [Wiki](https://wiki.archlinux.org/title/Foot) |
 | Fcitx5 | 轻量级内核的输入法框架。 | [Note](note/fcitx5.md) |
 | Btop | TUI 资源监视器。 | [Source](https://github.com/aristocratos/btop) |
+| GTKLock | 基于 GTK 的 Wayland 锁屏工具。 | [Source](https://github.com/jovanlanik/gtklock) |
 
 ## TODO
 
