@@ -1,5 +1,9 @@
 # Fcitx5
 
+轻量级内核的输入法框架。
+
+> https://fcitx-im.org/wiki/Fcitx_5
+
 ## 安装
 
 - `fcitx5-im` - 包组，含 `fcitx5` `fcitx5-configtool` `fcitx5-gtk` `fcitx5-qt`
