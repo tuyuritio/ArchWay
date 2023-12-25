@@ -27,3 +27,9 @@ makepkg -si
     - `/etc/pacman.conf` 中，取消注释 `Color` 。
 - 倒序输出（此时最相似的结果距离命令行光标处最近）
     - `/etc/paru.conf` 中，取消注释 `BottomUp` 。
+
+## 解锁 Pacman 数据库
+
+```sh
+sudo rm /var/lib/pacman/db.lck
+```
