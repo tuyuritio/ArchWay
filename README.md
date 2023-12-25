@@ -4,11 +4,11 @@ Maybe I use Arch.
 
 > 正直、Windows は基本的に十分だな…
 
-## 软件
+## 目录
 
 <!-- Fallback route: Note > Wiki > Source(GitHub etc.) > Package/AUR -->
 
-| 目录 | 描述 | 链接 |
+| 名称 | 描述 | 链接 |
 |:-:|-|-|
 | Installation | 系统安装指北。 | [Note](note/installation.md) |
 | Git | 版本控制工具。 | [Wiki](https://wiki.archlinux.org/title/Git) |
