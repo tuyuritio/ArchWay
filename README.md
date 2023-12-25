@@ -10,6 +10,7 @@ Maybe I use Arch.
 
 | 名称 | 描述 | 链接 |
 |:-:|-|-|
+| Installation | 系统安装指北。 | [Note](note/installation.md) |
 | Git | 版本控制工具。 | [Wiki](https://wiki.archlinux.org/title/Git) |
 | Paru | **Arch 用户仓库（AUR）** 助手之一。 | [Note](note/paru.md) |
 | Foot | 快速轻量的 Wayland 终端模拟器。 | [Wiki](https://wiki.archlinux.org/title/Foot) |
