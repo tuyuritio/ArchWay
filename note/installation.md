@@ -107,19 +107,33 @@ pacstrap /mnt amd-ucode # AMD
 
 #### systemd-boot
 
+1. 基础安装
+
 ```sh
 arch-chroot /mnt
 bootctl install --path=/boot
 systemctl enable systemd-boot-update
-cp /mnt/usr/share/systemd/bootctl/arch.conf /mnt/boot/loader/entries/arch.conf
-blkid
+cp /usr/share/systemd/bootctl/arch.conf /boot/loader/entries/arch.conf
 ```
 
-```
+2. 编辑启动项
+
+- 通过 `blkid` 命令获取根分区 UUID `<PARTUUID>`。
+
+```sh
+# /mnt/boot/loader/entries/arch.conf
 title          Arch Linux
 linux          /vmlinuz-linux
 initrd         /initramfs-linux.img
-options        root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660 rw
+options        root=PARTUUID=<PARTUUID> rw
+```
+
+3. 能够正常开机后，可根据情况添加静默启动，屏蔽内核报错。
+
+```sh
+# /mnt/boot/loader/entries/arch.conf
+...
+options        root=PARTUUID=<PARTUUID> quite loglevel=0 rw
 ```
 
 至此，一个完全纯净的 ArchLinux 安装完成。
