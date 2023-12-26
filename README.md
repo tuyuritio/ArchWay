@@ -18,6 +18,7 @@ Maybe I use Arch.
 | Zsh | 专为交互式使用而设计的 Shell。 | [Note](note/zsh.md) |
 | Fcitx5 | 轻量级内核的输入法框架。 | [Note](note/fcitx5.md) |
 | Btop | TUI 资源监视器。 | [Source](https://github.com/aristocratos/btop) |
+| joshuto | 类 ranger 的文件管理器。 | [Source](https://github.com/kamiyaa/joshuto) |
 | GTKLock | 基于 GTK 的 Wayland 锁屏工具。 | [Source](https://github.com/jovanlanik/gtklock) |
 | XDG user directories | $HOME 下的常用目录。 | [Note](note/xdg-user-dirs.md) |
 
