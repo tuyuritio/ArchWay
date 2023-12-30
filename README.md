@@ -21,6 +21,7 @@ Maybe I use Arch.
 | joshuto | 类 ranger 的文件管理器。 | [Source](https://github.com/kamiyaa/joshuto) |
 | GTKLock | 基于 GTK 的 Wayland 锁屏工具。 | [Source](https://github.com/jovanlanik/gtklock) |
 | XDG user directories | $HOME 下的常用目录。 | [Note](note/xdg-user-dirs.md) |
+| fprint | 消费级指纹识别设备支持。 | [Note](note/fprint.md) |
 
 ## TODO
 
