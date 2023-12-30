@@ -33,7 +33,7 @@
 
 ## 指纹管理
 
-> 据[某驱动文档](https://github.com/iafilatov/libfprint?tab=readme-ov-file#common-problems)描述，`libfrpint` 需要较大的指纹图像以供识别。即为了使**非滑动识别器**或**面积小于144x96的矩形识别器**准确识别指纹，需要 ***稳定且相对缓慢*** 地滑动手指。
+> 据[某驱动文档](https://github.com/iafilatov/libfprint?tab=readme-ov-file#common-problems)描述，`libfprint` 需要较大的指纹图像以供识别。即为了使**非滑动识别器**或**面积小于144x96的矩形识别器**准确识别指纹，需要在录入时 ***稳定且相对缓慢*** 地滑动手指，验证时点触即可。
 
 ### 录入指纹
 
