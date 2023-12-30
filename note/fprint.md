@@ -69,8 +69,3 @@ while true; do fprintd-verify; done | grep result
 ```sh
 fprint-delete <USER>
 ```
-
-## 其它
-
-- ThinkPad X13 Gen 2i
-    - 需在 BIOS (Security -> Fingerprint) 中关闭 `Predesktop Authentication` 并 `Reset Fingerprint Data` 。
