@@ -16,6 +16,7 @@ Maybe I use Arch.
 | Ly | 轻量的 TUI 显示管理器。 | [Note](note/ly.md) |
 | Foot | 快速轻量的 Wayland 终端模拟器。 | [Wiki](https://wiki.archlinux.org/title/Foot) |
 | Zsh | 专为交互式使用而设计的 Shell。 | [Note](note/zsh.md) |
+| Neovim | 基于 Vim 的文本编辑器。 | [Source](https://neovim.io) |
 | Fcitx5 | 轻量级内核的输入法框架。 | [Note](note/fcitx5.md) |
 | Btop | TUI 资源监视器。 | [Source](https://github.com/aristocratos/btop) |
 | joshuto | 类 ranger 的文件管理器。 | [Source](https://github.com/kamiyaa/joshuto) |
@@ -41,3 +42,4 @@ Maybe I use Arch.
 - [ ] grim
 - [ ] slurp
 - [ ] wl-clipboard
+- [ ] Fontconfig
