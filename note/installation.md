@@ -78,7 +78,7 @@ timedatectl set-ntp true
 
 ```sh
 pacman -Sy archlinux-keyring # 更新 GPG 证书
-pacstrap /mnt base base-devel linux linux-fireware
+pacstrap /mnt base base-devel linux linux-firmware
 ```
 
 > 境外数据传输问题请自行解决。
