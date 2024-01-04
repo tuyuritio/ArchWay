@@ -12,6 +12,7 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 autoload -Uz compinit && compinit
 autoload -Uz colors && colors
+unsetopt PROMPT_CR
 
 # Plugin
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
