@@ -6,20 +6,13 @@
 
 ## 安装
 
-1. 克隆源码
-
 ```sh
+sudo pacman -S rustup # 安装 Cargo 包管理器
+rustup default stable
 git clone https://aur.archlinux.org/paru.git
-```
-
-2. 编译
-
-```sh
 cd paru/
 makepkg -si
 ```
-
-> 在选择编译依赖时会弹出 `(1) rust (2) rustup`，目前似乎只能使用 `rust` 顺利编译。
 
 ## 配置
 

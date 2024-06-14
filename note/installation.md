@@ -36,25 +36,34 @@ cfdisk /dev/sda
 |-|-|-|-|
 | `/dev/sda1` | `/boot` | 256MB | EFI System |
 | `/dev/sda2` | `[SWAP]` | 同内存大小 | Linux swap |
-| `/dev/sda3` | `/` | 30GB | Linux filesystem |
-| `/dev/sda4` | `/home` | 剩余 | Linux filesystem |
+| `/dev/sda3` | `/@` | 剩余 | Linux filesystem |
+| - | `/@home` | - | - |
 
-### 格式化
+##### 格式化
 
 ```sh
 mkfs.fat -F32 /dev/sda1
 mkswap /dev/sda2
-mkfs.ext4 /dev/sda3
-mkfs.ext4 /dev/sda4
+mkfs.btrfs /dev/sda3
 ```
 
-### 挂载
+##### 创建子卷
 
 ```sh
-mount /dev/sda3 /mnt
-mkdir /mnt/boot /mnt/home
+mount -t btrfs -o compress=zstd /dev/sda3 /mnt
+btrfs subvolume create /mnt/@
+btrfs subvolume create /mnt/@home
+btrfs subvolume list -p /mnt
+umount /mnt
+```
+
+#### 挂载
+
+```sh
+mount -t btrfs -o subvol=/@,compress=zstd /dev/sda3 /mnt
+mkdir /mnt/home /mnt/boot
+mount -t btrfs -o subvol=/@home,compress=zstd /dev/sda3 /mnt/home
 mount /dev/sda1 /mnt/boot
-mount /dev/sda4 /mnt/home
 swapon /dev/sda2
 ```
 
@@ -83,7 +92,7 @@ pacstrap /mnt base base-devel linux linux-firmware
 
 > 境外数据传输问题请自行解决。
 
-### 定义分区
+### 自动挂载分区
 
 ```sh
 genfstab -U /mnt > /mnt/etc/fstab
@@ -97,7 +106,7 @@ genfstab -U /mnt > /mnt/etc/fstab
 pacstrap /mnt intel-ucode # Intel
 pacstrap /mnt amd-ucode # AMD
 ```
-
+ 
 ### 引导
 
 主流的引导方式有两种：
@@ -107,50 +116,21 @@ pacstrap /mnt amd-ucode # AMD
 
 #### systemd-boot
 
-1. 基础安装
-
 ```sh
 arch-chroot /mnt
-bootctl install --path=/boot
+bootctl install
 systemctl enable systemd-boot-update
 cp /usr/share/systemd/bootctl/arch.conf /boot/loader/entries/arch.conf
+exit
+blkid | grep '/dev/sda3' | grep -oP 'PARTUUID=\"\K[^"]+' >> /mnt/boot/loader/entries/arch.conf
+vim /mnt/boot/loader/entries/arch.conf
 ```
 
-2. 编辑启动项
-
-- 通过 `blkid` 命令获取根分区 UUID `<PARTUUID>`。
-
-```sh
-# /mnt/boot/loader/entries/arch.conf
+```
 title          Arch Linux
 linux          /vmlinuz-linux
 initrd         /initramfs-linux.img
-options        root=PARTUUID=<PARTUUID> rw
-```
-
-3. 能够正常开机后，可根据情况添加静默启动，屏蔽内核报错。
-
-```sh
-# /mnt/boot/loader/entries/arch.conf
-...
-options        root=PARTUUID=<PARTUUID> quite loglevel=0 rw
+options        root=PARTUUID=</dev/sda3 PARTUUID> rootfstype=btrfs rootflags=subvol=@ rw
 ```
 
 至此，一个完全纯净的 ArchLinux 安装完成。
-
-## 4. 调整
-
-- 用户密码
-- 安装基础软件
-    - neovim
-    - zsh
-    - iwd
-        - 网络管理器
-
-### 无线网络连接
-
-```sh
-pacman -S networkmanager
-systemctl start NetworkManager
-systemctl enable NetworkManager
-```

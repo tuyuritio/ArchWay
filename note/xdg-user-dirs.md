@@ -23,6 +23,8 @@ LC_ALL=C xdg-user-dirs-update --force
 xdg-user-dirs-update --set <DIRECTORY> $HOME/<PATH>
 ```
 
+> 修改目录前需确保目标路径存在。
+
 ## 查询配置
 
 ```sh
